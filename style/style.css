@@ -36,10 +36,12 @@ h1 {
 
 main {
     flex-grow: 3;
+    padding: 30px 20px;
 }
 
 .chopper-container {
     position: relative;
+    padding: 10px;
     overflow: hidden;
 }
 
@@ -49,23 +51,23 @@ main {
 
 .change-container {
     position: absolute;
-    width: 1000px;
+    width: 1100px;
 }
 
 .head-container {
-    transform: translate(0, -270px);
+    transform: translate(120px, 0px);
 }
 
 .face-container {
-    transform: translate(0, -270px);
+    transform: translate(120px, 0px);
 }
 
 .top-container {
-    transform: translate(0, -190px);
+    transform: translate(120px, 80px);
 }
 
 .bottom-container {
-    transform: translate(0, -120px);
+    transform: translate(120px, 150px);
 }
 
 /* Settings panel */
@@ -120,4 +122,27 @@ img {
 
 button:hover {
     background-color: #ED6877;
+}
+
+/* MEDIA QUERIS */
+
+@media (max-width: 730px) {
+
+    body {
+        flex-direction: column;
+    }
+
+    aside {
+        background-color: white;
+        padding: 10px;
+    }
+
+    .settings-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .setting-panel {
+        width: 100px;
+    }
 }
