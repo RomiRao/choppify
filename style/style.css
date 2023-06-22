@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+/* General settings */
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column-container {
+    flex-direction: column;
+}
+
+
+main {
+    flex-grow: 3;
+    background-color: aqua;
+}
+
+/* Settings panel */
+
+aside {
+    flex-grow: 1;
+    background-color: rebeccapurple;
+}
+
+.setting-panel {
+    width: 60%;
+}
+
+.buttons-container {
+    background-color: red;
+    width: 100%;
+}
+
+img {
+    width: 300px;
+}
