@@ -8,10 +8,15 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
+    font-family: 'Nunito', sans-serif;
 }
 
 /* General settings */
 
+h1 {
+    font-size: 70px;
+    color: #ea4659;
+}
 
 .flex-container {
     display: flex;
@@ -23,28 +28,96 @@ body {
     flex-direction: column;
 }
 
+.justify-container {
+    justify-content: space-evenly;
+}
+
+/* Image panel */
 
 main {
     flex-grow: 3;
-    background-color: aqua;
+}
+
+.chopper-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.imagebody {
+    width: 100px;
+}
+
+.change-container {
+    position: absolute;
+    width: 1000px;
+}
+
+.head-container {
+    transform: translate(0, -270px);
+}
+
+.face-container {
+    transform: translate(0, -270px);
+}
+
+.top-container {
+    transform: translate(0, -190px);
+}
+
+.bottom-container {
+    transform: translate(0, -120px);
 }
 
 /* Settings panel */
 
 aside {
     flex-grow: 1;
-    background-color: rebeccapurple;
+    background-color: #c5dcf7;
+}
+
+aside div {
+    width: 100%;
 }
 
 .setting-panel {
-    width: 60%;
+    width: 50%;
+    margin: 10px;
 }
 
 .buttons-container {
-    background-color: red;
+    background-color: #ab4e59;
     width: 100%;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+button {
+    color: white;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.arrow-button {
+    width: 30px;
+}
+
+.save-button {
+    width: 70px;
+    background-color: #cd9097;
+    font-size: 15px;
 }
 
 img {
     width: 300px;
+}
+
+/* USER INTERACTIONS */
+
+/* Hover */
+
+button:hover {
+    background-color: #ED6877;
 }
