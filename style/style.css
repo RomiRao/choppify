@@ -29,7 +29,7 @@ h1 {
 }
 
 .justify-container {
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 /* Image panel */
@@ -84,32 +84,38 @@ aside div {
 .setting-panel {
     width: 50%;
     margin: 10px;
+    color: white;
 }
 
 .buttons-container {
     background-color: #ab4e59;
     width: 100%;
-    padding: 5px;
     border-radius: 3px;
+    overflow: hidden;
 }
 
 button {
     color: white;
-    height: 30px;
-    border-radius: 3px;
+    height: 40px;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
+h4 {
+    margin: 0 2px;
+    text-align: center;
+}
+
 .arrow-button {
-    width: 30px;
+    width: 50px;
 }
 
 .save-button {
     width: 70px;
     background-color: #cd9097;
     font-size: 15px;
+    border-radius: 3px;
 }
 
 img {
@@ -121,7 +127,8 @@ img {
 /* Hover */
 
 button:hover {
-    background-color: #ED6877;
+    background-color: white;
+    color: #ED6877;
 }
 
 /* MEDIA QUERIS */
