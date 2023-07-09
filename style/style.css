@@ -9,13 +9,15 @@ body {
     width: 100%;
     display: flex;
     font-family: 'Nunito', sans-serif;
+    background-image: linear-gradient(45deg, #e6616e 12.50%, #ffffff 12.50%, #ffffff 25%, #3eacde 25%, #3eacde 37.50%, #fff 37.50%, #fff 50%, #e6616e 50%, #e6616e 62.50%, #ffffff 62.50%, #ffffff 75%, #3eacde 75%, #3eacde 87.50%, #fff 87.50%, #fff 100%);
+background-size: 113.14px 113.14px;
 }
 
 /* General settings */
 
 h1 {
     font-size: 70px;
-    color: #ea4659;
+    color: #e6616e;
 }
 
 .flex-container {
@@ -38,6 +40,7 @@ main {
     flex-grow: 3;
     padding: 30px 20px;
     height: 100%;
+    background-color: rgba(255, 255, 255, 0.755);
 }
 
 .chopper-container {
@@ -46,6 +49,7 @@ main {
     width: 100%;
     max-width: 330px;
     background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .image-body {
@@ -58,7 +62,7 @@ main {
 
 aside {
     flex-grow: 1;
-    background-color: #d1e0f2;
+    background-color: white;
 }
 
 aside div {
@@ -69,11 +73,11 @@ aside div {
     width: 100%;
     max-width: 150px;
     margin: 10px;
-    color: #b87f86;
+    color: #e6616e;
 }
 
 .buttons-container {
-    background-color: #ab4e59;
+    background-color: #3eacde;
     width: 100%;
     border-radius: 3px;
     overflow: hidden;
@@ -123,7 +127,7 @@ button:hover {
     }
 
     aside {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.755);
         padding: 10px;
     }
 

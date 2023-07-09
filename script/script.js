@@ -17,6 +17,9 @@ const headLabel = document.getElementById('head-label');
 const rightHead = document.getElementById('right-head');
 const leftHead = document.getElementById('left-head');
 
+rightHead.addEventListener('click', () => {
+    
+})
 //Body
 const bodyLabel = document.getElementById('body-label');
 const rightBody = document.getElementById('right-body');
