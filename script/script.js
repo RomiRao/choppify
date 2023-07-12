@@ -39,13 +39,13 @@ const character = [
     },
     {
         name: "Luffy",
-        head: "../style/body_parts/Luffy/luffy_head.png",
-        body: "../style/body_parts/Luffy/luffy_body.png",
-        eyes: "../style/body_parts/Luffy/luffy_eyes.png",
-        mouth: "../style/body_parts/Luffy/luffy_mouth.png",
-        legs: "../style/body_parts/Luffy/luffy_legs.png",
-        pants: "../style/body_parts/Luffy/luffy_pants.png",
-        object: "../style/body_parts/Luffy/luffy_object.png",
+        head: "../Choppify/style/body_parts/Luffy/luffy_head.png",
+        body: "../Choppify/style/body_parts/Luffy/luffy_body.png",
+        eyes: "../Choppify/style/body_parts/Luffy/luffy_eyes.png",
+        mouth: "../Choppify/style/body_parts/Luffy/luffy_mouth.png",
+        legs: "../Choppify/style/body_parts/Luffy/luffy_legs.png",
+        pants: "../Choppify/style/body_parts/Luffy/luffy_pants.png",
+        object: "../Choppify/style/body_parts/Luffy/luffy_object.png",
     },
     {
         name: "Zoro",
@@ -273,11 +273,11 @@ previousObject.addEventListener("click", () => {
     iObject--;
     if (iObject >= 0) {
         objectLabel.innerText = character[iObject].name;
-        chopperObject.style.backgroundImage = `url('${character[iObjects].objects}')`;
+        chopperObject.style.backgroundImage = `url('${character[iObject].object}')`;
     } else {
         iObject = characterAmount - 1;
         objectLabel.innerText = character[iObject].name;
-        chopperObject.style.backgroundImage = `url('${character[iObjects].objects}')`;
+        chopperObject.style.backgroundImage = `url('${character[iObject].object}')`;
     }
 });
 
