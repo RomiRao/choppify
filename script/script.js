@@ -1,265 +1,282 @@
+//Canvas
+const canvas = document.getElementById("canvas");
 
-//Canvas 
-const canvas = document.getElementById('canvas');
+//BODY PARTS
+const chopperHead = document.getElementById("chopper-head");
+const chopperBody = document.getElementById("chopper-body");
+const chopperLegs = document.getElementById("chopper-legs");
+const chopperEyes = document.getElementById("chopper-eyes");
+const chopperMouth = document.getElementById("chopper-mouth");
+const chopperPants = document.getElementById("chopper-pants");
+const chopperObject = document.getElementById("chopper-object");
 
-//Chopper parts
-const chopperHead = document.getElementById('chopper-head');
-const chopperBody = document.getElementById('chopper-body');
-const chopperLegs = document.getElementById('chopper-legs');
-const chopperEyes = document.getElementById('chopper-eyes');
-const chopperMouth = document.getElementById('chopper-mouth');
-const chopperPants = document.getElementById('chopper-pants');
-const chopperObject = document.getElementById('chopper-object');
+//---------
+//Character array
+//--------
 
+const character = [
+    {
+        name: "Chopper",
+        head: "../style/body_parts/Chopper/chopper_head.png",
+        body: "../style/body_parts/Chopper/chopper_body.png",
+        eyes: "../style/body_parts/Chopper/chopper_eyes.png",
+        mouth: "../style/body_parts/Chopper/chopper_mouth.png",
+        legs: "../style/body_parts/Chopper/chopper_legs.png",
+        pants: "../style/body_parts/Chopper/chopper_pants.png",
+        object: "../style/body_parts/Chopper/chopper_object.png",
+    },
+    {
+        name: "Luffy",
+        head: "../style/body_parts/Luffy/luffy_head.png",
+        body: "../style/body_parts/Luffy/luffy_body.png",
+        eyes: "../style/body_parts/Luffy/luffy_eyes.png",
+        mouth: "../style/body_parts/Luffy/luffy_mouth.png",
+        legs: "../style/body_parts/Luffy/luffy_legs.png",
+        pants: "../style/body_parts/Luffy/luffy_pants.png",
+        object: "../style/body_parts/Luffy/luffy_object.png",
+    },
+    {
+        name: "Zoro",
+        head: "../style/body_parts/Zoro/zoro_head.png",
+        body: "../style/body_parts/Zoro/zoro_body.png",
+        eyes: "../style/body_parts/Zoro/zoro_eyes.png",
+        mouth: "../style/body_parts/Zoro/zoro_mouth.png",
+        legs: "../style/body_parts/Zoro/zoro_legs.png",
+        pants: "../style/body_parts/Zoro/zoro_pants.png",
+        object: "../style/body_parts/Zoro/zoro_object.png",
+    },
+    {
+        name: "Sanji",
+        head: "../style/body_parts/Sanji/sanji_head.png",
+        body: "../style/body_parts/Sanji/sanji_body.png",
+        eyes: "../style/body_parts/Sanji/sanji_eyes.png",
+        mouth: "../style/body_parts/Sanji/sanji_mouth.png",
+        legs: "../style/body_parts/Sanji/sanji_legs.png",
+        pants: "../style/body_parts/Sanji/sanji_pants.png",
+        object: "../style/body_parts/Sanji/sanji_object.png",
+    },
+];
 
+const characterAmount = Object.keys(character).length;
 
 //--------------
 //SETINGS BUTTONS
 //--------------
 
-
 //HEAD --------
 
-const headLabel = document.getElementById('head-label');
-const rightHead = document.getElementById('right-head');
-const leftHead = document.getElementById('left-head');
+const headLabel = document.getElementById("head-label");
+const nextHead = document.getElementById("right-head");
+const previousHead = document.getElementById("left-head");
 
+let iHead = 0;
 
-//Right Button
-rightHead.addEventListener('click', () => {
-    if (headLabel.innerText === 'Chopper'){
-        headLabel.innerText = 'Luffy'
-    } else if (headLabel.innerText === 'Luffy'){
-        headLabel.innerText = 'Sanji'
-    } else if (headLabel.innerText === 'Sanji'){
-        headLabel.innerText = 'Zoro'
+previousHead.addEventListener("click", () => {
+    iHead--;
+    if (iHead >= 0) {
+        headLabel.innerText = character[iHead].name;
+        chopperHead.setAttribute("src", character[iHead].head);
     } else {
-        return false
+        iHead = characterAmount - 1;
+        headLabel.innerText = character[iHead].name;
+        chopperHead.setAttribute("src", character[iHead].head);
     }
 });
 
-
-
-//Left button
-leftHead.addEventListener('click', () => {
-    if (headLabel.innerText === 'Zoro'){
-        headLabel.innerText = 'Sanji'
-    } else if (headLabel.innerText === 'Sanji'){
-        headLabel.innerText = 'Luffy'
-    } else if (headLabel.innerText === 'Luffy'){
-        headLabel.innerText = 'Chopper'
+nextHead.addEventListener("click", () => {
+    iHead++;
+    if (iHead < characterAmount) {
+        headLabel.innerText = character[iHead].name;
+        chopperHead.setAttribute("src", character[iHead].head);
     } else {
-        return false
+        iHead = 0;
+        headLabel.innerText = character[iHead].name;
+        chopperHead.setAttribute("src", character[iHead].head);
     }
 });
-
-
-
 
 //BODY ------
-const bodyLabel = document.getElementById('body-label');
-const rightBody = document.getElementById('right-body');
-const leftBody = document.getElementById('left-body');
+const bodyLabel = document.getElementById("body-label");
+const nextBody = document.getElementById("right-body");
+const previousBody = document.getElementById("left-body");
 
+let iBody = 0;
 
-//Right Button
-rightBody.addEventListener('click', () => {
-    if (bodyLabel.innerText === 'Chopper'){
-        bodyLabel.innerText = 'Luffy'
-    } else if (bodyLabel.innerText === 'Luffy'){
-        bodyLabel.innerText = 'Sanji'
-    } else if (bodyLabel.innerText === 'Sanji'){
-        bodyLabel.innerText = 'Zoro'
+previousBody.addEventListener("click", () => {
+    iBody--;
+    if (iBody >= 0) {
+        bodyLabel.innerText = character[iBody].name;
+        chopperBody.setAttribute("src", character[iBody].body);
     } else {
-        console.log('averaver')
+        iBody = characterAmount - 1;
+        bodyLabel.innerText = character[iBody].name;
+        chopperBody.setAttribute("src", character[iBody].body);
     }
 });
 
-
-
-//Left button
-leftBody.addEventListener('click', () => {
-    if (bodyLabel.innerText === 'Zoro'){
-        bodyLabel.innerText = 'Sanji'
-    } else if (bodyLabel.innerText === 'Sanji'){
-        bodyLabel.innerText = 'Luffy'
-    } else if (bodyLabel.innerText === 'Luffy'){
-        bodyLabel.innerText = 'Chopper'
+nextBody.addEventListener("click", () => {
+    iBody++;
+    if (iBody < characterAmount) {
+        bodyLabel.innerText = character[iBody].name;
+        chopperBody.setAttribute("src", character[iBody].body);
     } else {
-        return false
+        iBody = 0;
+        bodyLabel.innerText = character[iBody].name;
+        chopperBody.setAttribute("src", character[iBody].body);
     }
 });
-
-
-
-
 
 //MOUTH -------
-const mouthLabel = document.getElementById('mouth-label');
-const rightMouth = document.getElementById('right-mouth');
-const leftMouth = document.getElementById('left-mouth');
+const mouthLabel = document.getElementById("mouth-label");
+const nextMouth = document.getElementById("right-mouth");
+const previousMouth = document.getElementById("left-mouth");
 
+let iMouth = 0;
 
-//Right Button
-rightMouth.addEventListener('click', () => {
-    if (mouthLabel.innerText === 'Chopper'){
-        mouthLabel.innerText = 'Luffy'
-    } else if (mouthLabel.innerText === 'Luffy'){
-        mouthLabel.innerText = 'Sanji'
-    } else if (mouthLabel.innerText === 'Sanji'){
-        mouthLabel.innerText = 'Zoro'
+previousMouth.addEventListener("click", () => {
+    iMouth--;
+    if (iMouth >= 0) {
+        mouthLabel.innerText = character[iMouth].name;
+        chopperMouth.setAttribute("src", character[iMouth].mouth);
     } else {
-        console.log('averaver')
+        iMouth = characterAmount - 1;
+        mouthLabel.innerText = character[iMouth].name;
+        chopperMouth.setAttribute("src", character[iMouth].mouth);
     }
 });
 
-
-
-//Left button
-leftMouth.addEventListener('click', () => {
-    if (mouthLabel.innerText === 'Zoro'){
-        mouthLabel.innerText = 'Sanji'
-    } else if (mouthLabel.innerText === 'Sanji'){
-        mouthLabel.innerText = 'Luffy'
-    } else if (mouthLabel.innerText === 'Luffy'){
-        mouthLabel.innerText = 'Chopper'
+nextMouth.addEventListener("click", () => {
+    iMouth++;
+    if (iMouth < characterAmount) {
+        mouthLabel.innerText = character[iMouth].name;
+        chopperMouth.setAttribute("src", character[iMouth].mouth);
     } else {
-        return false
+        iMouth = 0;
+        mouthLabel.innerText = character[iMouth].name;
+        chopperMouth.setAttribute("src", character[iMouth].mouth);
     }
 });
-
-
 
 //EYES ---------
-const eyesLabel = document.getElementById('eyes-label');
-const rightEyes = document.getElementById('right-eyes');
-const leftEyes = document.getElementById('left-eyes');
+const eyesLabel = document.getElementById("eyes-label");
+const nextEyes = document.getElementById("right-eyes");
+const previousEyes = document.getElementById("left-eyes");
 
-//Right Button
-rightEyes.addEventListener('click', () => {
-    if (eyesLabel.innerText === 'Chopper'){
-        eyesLabel.innerText = 'Luffy'
-    } else if (eyesLabel.innerText === 'Luffy'){
-        eyesLabel.innerText = 'Sanji'
-    } else if (eyesLabel.innerText === 'Sanji'){
-        eyesLabel.innerText = 'Zoro'
+let iEyes = 0;
+
+previousEyes.addEventListener("click", () => {
+    iEyes--;
+    if (iEyes >= 0) {
+        eyesLabel.innerText = character[iEyes].name;
+        chopperEyes.setAttribute("src", character[iEyes].eyes);
     } else {
-        console.log('averaver')
+        iEyes = characterAmount - 1;
+        eyesLabel.innerText = character[iEyes].name;
+        chopperEyes.setAttribute("src", character[iEyes].eyes);
     }
 });
 
-
-
-//Left button
-leftEyes.addEventListener('click', () => {
-    if (eyesLabel.innerText === 'Zoro'){
-        eyesLabel.innerText = 'Sanji'
-    } else if (eyesLabel.innerText === 'Sanji'){
-        eyesLabel.innerText = 'Luffy'
-    } else if (eyesLabel.innerText === 'Luffy'){
-        eyesLabel.innerText = 'Chopper'
+nextEyes.addEventListener("click", () => {
+    iEyes++;
+    if (iEyes < characterAmount) {
+        eyesLabel.innerText = character[iEyes].name;
+        chopperEyes.setAttribute("src", character[iEyes].eyes);
     } else {
-        return false
+        iEyes = 0;
+        eyesLabel.innerText = character[iEyes].name;
+        chopperEyes.setAttribute("src", character[iEyes].eyes);
     }
 });
-
-
 
 //Pants
-const pantsLabel = document.getElementById('pants-label');
-const rightPants = document.getElementById('right-pants');
-const leftPants = document.getElementById('left-pants');
+const pantsLabel = document.getElementById("pants-label");
+const nextPants = document.getElementById("right-pants");
+const previousPants = document.getElementById("left-pants");
 
-//Right Button
-rightPants.addEventListener('click', () => {
-    if (pantsLabel.innerText === 'Chopper'){
-        pantsLabel.innerText = 'Luffy'
-    } else if (pantsLabel.innerText === 'Luffy'){
-        pantsLabel.innerText = 'Sanji'
-    } else if (pantsLabel.innerText === 'Sanji'){
-        pantsLabel.innerText = 'Zoro'
+let iPants = 0;
+
+previousPants.addEventListener("click", () => {
+    iPants--;
+    if (iPants >= 0) {
+        pantsLabel.innerText = character[iPants].name;
+        chopperPants.setAttribute("src", character[iPants].pants);
     } else {
-        console.log('averaver')
+        iPants = characterAmount - 1;
+        pantsLabel.innerText = character[iPants].name;
+        chopperPants.setAttribute("src", character[iPants].pants);
     }
 });
 
-
-
-//Left button
-leftPants.addEventListener('click', () => {
-    if (pantsLabel.innerText === 'Zoro'){
-        pantsLabel.innerText = 'Sanji'
-    } else if (pantsLabel.innerText === 'Sanji'){
-        pantsLabel.innerText = 'Luffy'
-    } else if (pantsLabel.innerText === 'Luffy'){
-        pantsLabel.innerText = 'Chopper'
+nextPants.addEventListener("click", () => {
+    iPants++;
+    if (iPants < characterAmount) {
+        pantsLabel.innerText = character[iPants].name;
+        chopperPants.setAttribute("src", character[iPants].pants);
     } else {
-        return false
+        iPants = 0;
+        pantsLabel.innerText = character[iPants].name;
+        chopperPants.setAttribute("src", character[iPants].pants);
     }
 });
 
 //Legs
-const legsLabel = document.getElementById('legs-label');
-const rightLegs = document.getElementById('right-legs');
-const leftLegs = document.getElementById('left-legs');
+const legsLabel = document.getElementById("legs-label");
+const nextLegs = document.getElementById("right-legs");
+const previousLegs = document.getElementById("left-legs");
 
-//Right Button
-rightLegs.addEventListener('click', () => {
-    if (legsLabel.innerText === 'Chopper'){
-        legsLabel.innerText = 'Luffy'
-    } else if (legsLabel.innerText === 'Luffy'){
-        legsLabel.innerText = 'Sanji'
-    } else if (legsLabel.innerText === 'Sanji'){
-        legsLabel.innerText = 'Zoro'
+let iLegs = 0;
+
+previousLegs.addEventListener("click", () => {
+    iLegs--;
+    if (iLegs >= 0) {
+        legsLabel.innerText = character[iLegs].name;
+        chopperLegs.setAttribute("src", character[iLegs].legs);
     } else {
-        console.log('averaver')
+        iLegs = characterAmount - 1;
+        legsLabel.innerText = character[iLegs].name;
+        chopperLegs.setAttribute("src", character[iLegs].legs);
     }
 });
 
-
-
-//Left button
-leftLegs.addEventListener('click', () => {
-    if (legsLabel.innerText === 'Zoro'){
-        legsLabel.innerText = 'Sanji'
-    } else if (legsLabel.innerText === 'Sanji'){
-        legsLabel.innerText = 'Luffy'
-    } else if (legsLabel.innerText === 'Luffy'){
-        legsLabel.innerText = 'Chopper'
+nextLegs.addEventListener("click", () => {
+    iLegs++;
+    if (iLegs < characterAmount) {
+        legsLabel.innerText = character[iLegs].name;
+        chopperLegs.setAttribute("src", character[iLegs].legs);
     } else {
-        return false
+        iLegs = 0;
+        legsLabel.innerText = character[iLegs].name;
+        chopperLegs.setAttribute("src", character[iLegs].legs);
     }
 });
 
 //Object
-const objectLabel = document.getElementById('object-label');
-const rightObject = document.getElementById('right-object');
-const leftObject = document.getElementById('left-object');
+const objectLabel = document.getElementById("object-label");
+const nextObject = document.getElementById("right-object");
+const previousObject = document.getElementById("left-object");
 
-//Right Button
-rightObject.addEventListener('click', () => {
-    if (objectLabel.innerText === 'Chopper'){
-        objectLabel.innerText = 'Luffy'
-    } else if (objectLabel.innerText === 'Luffy'){
-        objectLabel.innerText = 'Sanji'
-    } else if (objectLabel.innerText === 'Sanji'){
-        objectLabel.innerText = 'Zoro'
+let iObject = 0;
+
+previousObject.addEventListener("click", () => {
+    iObject--;
+    if (iObject >= 0) {
+        objectLabel.innerText = character[iObject].name;
+        chopperObject.setAttribute("src", character[iObject].object);
     } else {
-        console.log('averaver')
+        iObject = characterAmount - 1;
+        objectLabel.innerText = character[iObject].name;
+        chopperObject.setAttribute("src", character[iObject].object);
     }
 });
 
-
-
-//Left button
-leftObject.addEventListener('click', () => {
-    if (objectLabel.innerText === 'Zoro'){
-        objectLabel.innerText = 'Sanji'
-    } else if (objectLabel.innerText === 'Sanji'){
-        objectLabel.innerText = 'Luffy'
-    } else if (objectLabel.innerText === 'Luffy'){
-        objectLabel.innerText = 'Chopper'
+nextObject.addEventListener("click", () => {
+    iObject++;
+    if (iObject < characterAmount) {
+        objectLabel.innerText = character[iObject].name;
+        chopperObject.setAttribute("src", character[iObject].object);
     } else {
-        return false
+        iObject = 0;
+        objectLabel.innerText = character[iObject].name;
+        chopperObject.setAttribute("src", character[iObject].object);
     }
 });
