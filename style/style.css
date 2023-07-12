@@ -52,12 +52,46 @@ main {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.image-body {
-    width: 90%;
-    position: absolute;
+#chopper-base {
+    background-image: url('./body_parts/base.png');
 }
 
+#chopper-body {
+    background-image: url('./body_parts/Chopper/chopper_body.png');
+}
 
+#chopper-head {
+    background-image: url('./body_parts/Chopper/chopper_head.png');
+}
+
+#chopper-legs {
+    background-image: url('./body_parts/Chopper/chopper_legs.png');
+}
+
+#chopper-pants {
+    background-image: url('./body_parts/Chopper/chopper_pants.png');
+}
+
+#chopper-mouth {
+    background-image: url('./body_parts/Chopper/chopper_mouth.png');
+}
+
+#chopper-eyes {
+    background-image: url('./body_parts/Chopper/chopper_eyes.png');
+}
+
+#chopper-object {
+    background-image: url('./body_parts/Chopper/chopper_object.png');
+}
+
+.image-body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 /* Settings panel */
 
 aside {

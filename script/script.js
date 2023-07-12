@@ -1,5 +1,5 @@
 //Canvas
-const canvas = document.getElementById("canvas");
+const chopperContainer = document.getElementById("chopper-container");
 
 //BODY PARTS
 const chopperHead = document.getElementById("chopper-head");
@@ -9,6 +9,18 @@ const chopperEyes = document.getElementById("chopper-eyes");
 const chopperMouth = document.getElementById("chopper-mouth");
 const chopperPants = document.getElementById("chopper-pants");
 const chopperObject = document.getElementById("chopper-object");
+
+//--------
+//DOWNLOAD BUTTON
+//-------
+const saveButton = document.getElementById("save-button");
+saveButton.addEventListener("click", () => downloadChopper());
+
+const downloadChopper = () => {
+    domtoimage.toBlob(chopperContainer).then(function (blob) {
+        window.saveAs(blob, "choppify.png");
+    });
+};
 
 //---------
 //Character array
@@ -75,11 +87,11 @@ previousHead.addEventListener("click", () => {
     iHead--;
     if (iHead >= 0) {
         headLabel.innerText = character[iHead].name;
-        chopperHead.setAttribute("src", character[iHead].head);
+        chopperHead.style.backgroundImage = `url('${character[iHead].head}')`;
     } else {
         iHead = characterAmount - 1;
         headLabel.innerText = character[iHead].name;
-        chopperHead.setAttribute("src", character[iHead].head);
+        chopperHead.style.backgroundImage = `url('${character[iHead].head}')`;
     }
 });
 
@@ -87,11 +99,11 @@ nextHead.addEventListener("click", () => {
     iHead++;
     if (iHead < characterAmount) {
         headLabel.innerText = character[iHead].name;
-        chopperHead.setAttribute("src", character[iHead].head);
+        chopperHead.style.backgroundImage = `url('${character[iHead].head}')`;
     } else {
         iHead = 0;
         headLabel.innerText = character[iHead].name;
-        chopperHead.setAttribute("src", character[iHead].head);
+        chopperHead.style.backgroundImage = `url('${character[iHead].head}')`;
     }
 });
 
@@ -106,11 +118,11 @@ previousBody.addEventListener("click", () => {
     iBody--;
     if (iBody >= 0) {
         bodyLabel.innerText = character[iBody].name;
-        chopperBody.setAttribute("src", character[iBody].body);
+        chopperBody.style.backgroundImage = `url('${character[iBody].body}')`;
     } else {
         iBody = characterAmount - 1;
         bodyLabel.innerText = character[iBody].name;
-        chopperBody.setAttribute("src", character[iBody].body);
+        chopperBody.style.backgroundImage = `url('${character[iBody].body}')`;
     }
 });
 
@@ -118,11 +130,11 @@ nextBody.addEventListener("click", () => {
     iBody++;
     if (iBody < characterAmount) {
         bodyLabel.innerText = character[iBody].name;
-        chopperBody.setAttribute("src", character[iBody].body);
+        chopperBody.style.backgroundImage = `url('${character[iBody].body}')`;
     } else {
         iBody = 0;
         bodyLabel.innerText = character[iBody].name;
-        chopperBody.setAttribute("src", character[iBody].body);
+        chopperBody.style.backgroundImage = `url('${character[iBody].body}')`;
     }
 });
 
@@ -137,11 +149,11 @@ previousMouth.addEventListener("click", () => {
     iMouth--;
     if (iMouth >= 0) {
         mouthLabel.innerText = character[iMouth].name;
-        chopperMouth.setAttribute("src", character[iMouth].mouth);
+        chopperMouth.style.backgroundImage = `url('${character[iMouth].mouth}')`;
     } else {
         iMouth = characterAmount - 1;
         mouthLabel.innerText = character[iMouth].name;
-        chopperMouth.setAttribute("src", character[iMouth].mouth);
+        chopperMouth.style.backgroundImage = `url('${character[iMouth].mouth}')`;
     }
 });
 
@@ -149,11 +161,11 @@ nextMouth.addEventListener("click", () => {
     iMouth++;
     if (iMouth < characterAmount) {
         mouthLabel.innerText = character[iMouth].name;
-        chopperMouth.setAttribute("src", character[iMouth].mouth);
+        chopperMouth.style.backgroundImage = `url('${character[iMouth].mouth}')`;
     } else {
         iMouth = 0;
         mouthLabel.innerText = character[iMouth].name;
-        chopperMouth.setAttribute("src", character[iMouth].mouth);
+        chopperMouth.style.backgroundImage = `url('${character[iMouth].mouth}')`;
     }
 });
 
@@ -168,11 +180,11 @@ previousEyes.addEventListener("click", () => {
     iEyes--;
     if (iEyes >= 0) {
         eyesLabel.innerText = character[iEyes].name;
-        chopperEyes.setAttribute("src", character[iEyes].eyes);
+        chopperEyes.style.backgroundImage = `url('${character[iEyes].eyes}')`;
     } else {
         iEyes = characterAmount - 1;
         eyesLabel.innerText = character[iEyes].name;
-        chopperEyes.setAttribute("src", character[iEyes].eyes);
+        chopperEyes.style.backgroundImage = `url('${character[iEyes].eyes}')`;
     }
 });
 
@@ -180,11 +192,11 @@ nextEyes.addEventListener("click", () => {
     iEyes++;
     if (iEyes < characterAmount) {
         eyesLabel.innerText = character[iEyes].name;
-        chopperEyes.setAttribute("src", character[iEyes].eyes);
+        chopperEyes.style.backgroundImage = `url('${character[iEyes].eyes}')`;
     } else {
         iEyes = 0;
         eyesLabel.innerText = character[iEyes].name;
-        chopperEyes.setAttribute("src", character[iEyes].eyes);
+        chopperEyes.style.backgroundImage = `url('${character[iEyes].eyes}')`;
     }
 });
 
@@ -199,11 +211,11 @@ previousPants.addEventListener("click", () => {
     iPants--;
     if (iPants >= 0) {
         pantsLabel.innerText = character[iPants].name;
-        chopperPants.setAttribute("src", character[iPants].pants);
+        chopperPants.style.backgroundImage = `url('${character[iPants].pants}')`;
     } else {
         iPants = characterAmount - 1;
         pantsLabel.innerText = character[iPants].name;
-        chopperPants.setAttribute("src", character[iPants].pants);
+        chopperPants.style.backgroundImage = `url('${character[iPants].pants}')`;
     }
 });
 
@@ -211,11 +223,11 @@ nextPants.addEventListener("click", () => {
     iPants++;
     if (iPants < characterAmount) {
         pantsLabel.innerText = character[iPants].name;
-        chopperPants.setAttribute("src", character[iPants].pants);
+        chopperPants.style.backgroundImage = `url('${character[iPants].pants}')`;
     } else {
         iPants = 0;
         pantsLabel.innerText = character[iPants].name;
-        chopperPants.setAttribute("src", character[iPants].pants);
+        chopperPants.style.backgroundImage = `url('${character[iPants].pants}')`;
     }
 });
 
@@ -230,11 +242,11 @@ previousLegs.addEventListener("click", () => {
     iLegs--;
     if (iLegs >= 0) {
         legsLabel.innerText = character[iLegs].name;
-        chopperLegs.setAttribute("src", character[iLegs].legs);
+        chopperLegs.style.backgroundImage = `url('${character[iLegs].legs}')`;
     } else {
         iLegs = characterAmount - 1;
         legsLabel.innerText = character[iLegs].name;
-        chopperLegs.setAttribute("src", character[iLegs].legs);
+        chopperLegs.style.backgroundImage = `url('${character[iLegs].legs}')`;
     }
 });
 
@@ -242,11 +254,11 @@ nextLegs.addEventListener("click", () => {
     iLegs++;
     if (iLegs < characterAmount) {
         legsLabel.innerText = character[iLegs].name;
-        chopperLegs.setAttribute("src", character[iLegs].legs);
+        chopperLegs.style.backgroundImage = `url('${character[iLegs].legs}')`;
     } else {
         iLegs = 0;
         legsLabel.innerText = character[iLegs].name;
-        chopperLegs.setAttribute("src", character[iLegs].legs);
+        chopperLegs.style.backgroundImage = `url('${character[iLegs].legs}')`;
     }
 });
 
@@ -261,11 +273,11 @@ previousObject.addEventListener("click", () => {
     iObject--;
     if (iObject >= 0) {
         objectLabel.innerText = character[iObject].name;
-        chopperObject.setAttribute("src", character[iObject].object);
+        chopperObject.style.backgroundImage = `url('${character[iObjects].objects}')`;
     } else {
         iObject = characterAmount - 1;
         objectLabel.innerText = character[iObject].name;
-        chopperObject.setAttribute("src", character[iObject].object);
+        chopperObject.style.backgroundImage = `url('${character[iObjects].objects}')`;
     }
 });
 
@@ -273,10 +285,10 @@ nextObject.addEventListener("click", () => {
     iObject++;
     if (iObject < characterAmount) {
         objectLabel.innerText = character[iObject].name;
-        chopperObject.setAttribute("src", character[iObject].object);
+        chopperObject.style.backgroundImage = `url('${character[iObject].object}')`;
     } else {
         iObject = 0;
         objectLabel.innerText = character[iObject].name;
-        chopperObject.setAttribute("src", character[iObject].object);
+        chopperObject.style.backgroundImage = `url('${character[iObject].object}')`;
     }
 });

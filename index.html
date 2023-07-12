@@ -10,23 +10,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
 </head>
-
 <body>
 
     <!-- Canvas container -->
 
     <main class="flex-container column-container">
         <h1>Choppify</h1>
-        <div class="chopper-container flex-container">
-            <img src="./style/body_parts/base.png" alt="" class="image-body">
-            <img src="./style/body_parts/Chopper/chopper_body.png" alt="" class="image-body" id="chopper-body">
-            <img src="./style/body_parts/Chopper/chopper_head.png" alt="" class="image-body" id="chopper-head">
-            <img src="./style/body_parts/Chopper/chopper_legs.png" alt="" class="image-body" id="chopper-legs">
-            <img src="./style/body_parts/Chopper/chopper_pants.png" alt="" class="image-body" id="chopper-pants">
-            <img src="./style/body_parts/Chopper/chopper_mouth.png" alt="" class="image-body" id="chopper-mouth">
-            <img src="" alt="" class="image-body" id="chopper-object">
-            <img src="./style/body_parts/Chopper/chopper_eyes.png" alt="" class="image-body" id="chopper-eyes">
+        <div class="chopper-container flex-container" id="chopper-container">
+            <div class="image-body" id="chopper-base"></div>
+            <div class="image-body" id="chopper-body"></div>
+            <div class="image-body" id="chopper-head"></div>
+            <div class="image-body" id="chopper-legs"></div>
+            <div class="image-body" id="chopper-pants"></div>
+            <div class="image-body" id="chopper-mouth"></div>
+            <div class="image-body" id="chopper-eyes"></div>
+            <div class="image-body" id="chopper-object"></div>
         </div>
     </main>
 
@@ -138,7 +139,7 @@
                 </div>
             </section>
         </div>
-        <button class="save-button">
+        <button class="save-button" id="save-button">
             Save
         </button>
     </aside>
