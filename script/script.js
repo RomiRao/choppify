@@ -32,8 +32,53 @@ const downloadChopper = () => {
         });
 };
 
+//-------
+//Preloading images
+//--------
+
+function preload_image(im_url) {
+    let img = new Image();
+    img.src = im_url;
+}
+
+//Chopper
+preload_image("../choppify/style/body_parts/Chopper/chopper_head.png");
+preload_image("../choppify/style/body_parts/Chopper/chopper_body.png");
+preload_image("../choppify/style/body_parts/Chopper/chopper_eyes.png");
+preload_image("../choppify/style/body_parts/Chopper/chopper_mouth.png");
+preload_image("../choppify/style/body_parts/Chopper/chopper_pants.png");
+preload_image("../choppify/style/body_parts/Chopper/chopper_object.png");
+preload_image("../choppify/style/body_parts/Chopper/chopper_legs.png");
+
+//Luffy
+preload_image("../choppify/style/body_parts/Luffy/luffy_head.png");
+preload_image("../choppify/style/body_parts/Luffy/luffy_body.png");
+preload_image("../choppify/style/body_parts/Luffy/luffy_eyes.png");
+preload_image("../choppify/style/body_parts/Luffy/luffy_mouth.png");
+preload_image("../choppify/style/body_parts/Luffy/luffy_pants.png");
+preload_image("../choppify/style/body_parts/Luffy/luffy_object.png");
+preload_image("../choppify/style/body_parts/Luffy/luffy_legs.png");
+
+//Sanji
+preload_image("../choppify/style/body_parts/Sanji/sanji_head.png");
+preload_image("../choppify/style/body_parts/Sanji/sanji_body.png");
+preload_image("../choppify/style/body_parts/Sanji/sanji_eyes.png");
+preload_image("../choppify/style/body_parts/Sanji/sanji_mouth.png");
+preload_image("../choppify/style/body_parts/Sanji/sanji_pants.png");
+preload_image("../choppify/style/body_parts/Sanji/sanji_object.png");
+preload_image("../choppify/style/body_parts/Sanji/sanji_legs.png");
+
+//Zoro
+preload_image("../choppify/style/body_parts/Zoro/zoro_head.png");
+preload_image("../choppify/style/body_parts/Zoro/zoro_body.png");
+preload_image("../choppify/style/body_parts/Zoro/zoro_eyes.png");
+preload_image("../choppify/style/body_parts/Zoro/zoro_mouth.png");
+preload_image("../choppify/style/body_parts/Zoro/zoro_pants.png");
+preload_image("../choppify/style/body_parts/Zoro/zoro_object.png");
+preload_image("../choppify/style/body_parts/Zoro/zoro_legs.png");
+
 //---------
-//Character array
+//Character gio es un gil
 //--------
 
 const character = [
