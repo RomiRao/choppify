@@ -17,9 +17,19 @@ const saveButton = document.getElementById("save-button");
 saveButton.addEventListener("click", () => downloadChopper());
 
 const downloadChopper = () => {
-    domtoimage.toBlob(chopperContainer).then(function (blob) {
-        window.saveAs(blob, "choppify.png");
-    });
+    let scale = 8;
+    domtoimage
+        .toBlob(chopperContainer, {
+            width: chopperContainer.clientWidth * scale,
+            height: chopperContainer.clientHeight * scale,
+            style: {
+                transform: "scale(" + scale + ")",
+                transformOrigin: "top left",
+            },
+        })
+        .then(function (blob) {
+            window.saveAs(blob, "choppify.png");
+        });
 };
 
 //---------
