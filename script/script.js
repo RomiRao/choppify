@@ -119,8 +119,6 @@ const characterAmount = Object.keys(character).length;
 //SETINGS BUTTONS
 //--------------
 
-//Left function
-
 //HEAD --------
 let iHead = 0;
 
